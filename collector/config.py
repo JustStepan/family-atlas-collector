@@ -11,10 +11,14 @@ class Settings(BaseSettings):
         env_file_encoding="utf-8",
     )
 
+    # API
+    SECRET_KEY: str
+
     # Telegram
     BOT_TOKEN: str
     FAMILY_CHAT_IDS: Dict[int, str]
     MSG_TYPES: list[str] = ["voice", "text", "photo", 'document', 'video']
     MSG_SESSION_THRESHOLD: dict[str, int] = {"notes": 5, "diary": 10}
+
 
 settings = Settings()
