@@ -19,6 +19,7 @@ class RawMessagesSchema(BaseModel):
     author: Author
     session_id: int
     message_thread: str
+    msg_type: str
     session_status: str
 
     content: str | None
