@@ -68,7 +68,8 @@ async def collect_messages(bot: Bot) -> list[dict[str, Any]]:
         limit=100,
         timeout=0,
     )
-    logger.debug(f"Получено {len(updates)} сообщений")
+    if len(updates) != 0:
+        logger.info(f"Получено {len(updates)} сообщений")
 
     collected = []
     for update in updates:
