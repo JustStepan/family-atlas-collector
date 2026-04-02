@@ -12,6 +12,7 @@ class Author(BaseModel):
 
 class RawMessagesSchema(BaseModel):
     
+    id: int
     author: Author
     session_id: int
     message_thread: str
