@@ -4,8 +4,6 @@ from pydantic import BaseModel
 
 
 class Author(BaseModel):
-    id: int
-    tlg_author_id: int
     author_name: str
     author_username: str
 
@@ -13,9 +11,7 @@ class Author(BaseModel):
 
 
 class RawMessagesSchema(BaseModel):
-
-    id: int
-    author_id: int
+    
     author: Author
     session_id: int
     message_thread: str
