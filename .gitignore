@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# Local files/folders
+calendar_credentials*
+calendar_token*
+_local*
+llm_models/
+media*
+logs*
+
+# Environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# DB
+*.sqlite
+*.sqlite3
+*.db
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
