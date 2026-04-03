@@ -97,6 +97,9 @@ async def raw_msgs_to_db(bot: Bot):
             message_content = await get_content_or_doc_spec(msg)
             rw_msg_params.update(message_content)
 
+            if msg.get("caption"):
+                rw_msg_params["caption"] = msg["caption"]
+
             # обрабатываем необязательные поля.
             if "forwarded_create_data" in msg:
                 rw_msg_params.update(
