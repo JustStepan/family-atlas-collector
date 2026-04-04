@@ -114,7 +114,8 @@ async def raw_msgs_to_db(bot: Bot):
                 if msg.get("caption") and len(msg["caption"]) > 150:
                     rw_msg_params.update(
                         {
-                            "content": msg["caption"]
+                            "content": msg["caption"],
+                            "caption": ''
                         }
                     )
 
