@@ -115,7 +115,7 @@ async def raw_msgs_to_db(bot: Bot):
                     rw_msg_params.update(
                         {
                             "content": msg["caption"],
-                            "caption": ''
+                            "caption": None
                         }
                     )
 
