@@ -2,6 +2,8 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
+from collector.models import SessionStatus
+
 
 class Author(BaseModel):
     author_name: str
@@ -11,13 +13,14 @@ class Author(BaseModel):
 
 
 class RawMessagesSchema(BaseModel):
-    
+
     id: int
     author: Author
     session_id: int
     message_thread: str
     msg_type: str
-    session_status: str
+    session_status: SessionStatus
+    created_at: datetime
 
     content: str | None
     caption: str | None
