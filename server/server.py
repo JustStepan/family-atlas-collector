@@ -23,6 +23,7 @@ async def get_ready_messages():
             select(RawMessages)
             .options(joinedload(RawMessages.author))
             .filter_by(session_status=SessionStatus.READY)
+            .order_by(RawMessages.created_at)
         )
         result = await session.execute(query)
         messages = result.scalars().all()
