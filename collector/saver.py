@@ -101,7 +101,7 @@ async def raw_msgs_to_db(bot: Bot):
                 rw_msg_params["caption"] = msg["caption"]
 
             # обрабатываем необязательные поля.
-            if "forwarded_create_data" in msg:
+            if "forwarded_msg_info" in msg:
                 rw_msg_params.update(
                     {
                         "forwarded_create_data": datetime.fromtimestamp(
@@ -127,7 +127,7 @@ async def raw_msgs_to_db(bot: Bot):
             )
 
             if create:
-                rw_msg.created_at = datetime.fromtimestamp(msg["created_at"])
+                rw_msg.created_at = msg["created_at"]
                 message_thread = msg["message_thread"]
                 if message_thread in [
                     "diary",
