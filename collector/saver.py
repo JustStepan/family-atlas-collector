@@ -127,7 +127,7 @@ async def raw_msgs_to_db(bot: Bot):
             )
 
             if create:
-                rw_msg.created_at = datetime.fromtimestamp(msg["created_at"])
+                rw_msg.created_at = msg["created_at"]
                 message_thread = msg["message_thread"]
                 if message_thread in [
                     "diary",

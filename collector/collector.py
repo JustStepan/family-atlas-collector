@@ -106,7 +106,7 @@ async def collect_messages(bot: Bot) -> list[dict[str, Any]]:
             "author_username": msg.from_user.username,
             "author_name": author_name,
             "message_thread": message_thread,
-            "created_at": msg.date.timestamp(),
+            "created_at": msg.date,
         }
 
         # контент по типу
