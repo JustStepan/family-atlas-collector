@@ -64,7 +64,7 @@ async def last_msg_session(session) -> int:
     query = select(func.max(RawMessages.session_id))
     result = await session.execute(query)
     instance = result.scalar_one_or_none()
-    return instance.session_id if instance else 0
+    return instance if instance else 0
 
 
 async def raw_msgs_to_db(bot: Bot):
