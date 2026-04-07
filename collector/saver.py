@@ -42,6 +42,7 @@ async def check_old_data(session, message_thread, msgcr_time):
     lmcr_time = datetime.fromtimestamp(0) if lm_data[0] is None else lm_data[0]
     lmcr_session_num = lm_data[1]
     delta = timedelta(minutes=settings.MSG_SESSION_THRESHOLD[message_thread])
+    logger.debug(f"last_msg_time={lmcr_time}, new_msg_time={msgcr_time}, delta={delta}, is_new={( lmcr_time + delta) < msgcr_time}")
     return ((lmcr_time + delta) < msgcr_time, lmcr_session_num)
 
 
