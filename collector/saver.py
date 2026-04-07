@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 from aiogram import Bot
-from sqlalchemy import desc, select
+from sqlalchemy import desc, select, func
 
 from collector.collector import collect_messages
 from collector.engine import get_db
@@ -61,7 +61,7 @@ async def last_msg_tuple_data(session, message_thread) -> tuple:
 
 
 async def last_msg_session(session) -> int:
-    query = select(RawMessages).order_by(desc(RawMessages.id)).limit(1)
+    query = select(func.max(RawMessages.session_id))
     result = await session.execute(query)
     instance = result.scalar_one_or_none()
     return instance.session_id if instance else 0
